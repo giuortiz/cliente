@@ -150,16 +150,17 @@ class _HomeViewState extends State<HomeView> {
                       width: _heigth / 4.5,
                       margin: EdgeInsets.only(left: 20.0),
                       child: new Material(
+
                           borderRadius: BorderRadius.circular(6.0),
                           color: Colors.white,
                           elevation: 4.0,
-                          child: new Column(
+                          child: new ListView(
                             children: <Widget>[
                               new Container(
                                   child: new Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: _listPessoas(grupo[index]),
-                              )),
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: _listPessoas(grupo[index]),
+                                  )),
                             ],
                           )),
                     );
