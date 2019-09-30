@@ -2,12 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:cliente/view-model/pessoa-viewmodel.dart';
+import 'package:cliente/view/utils/dialog-utils.dart';
 
 class ServerSocket {
   Socket _socket;
 
   void abrirConexao() async {
-    Socket.connect("192.168.0.10", 9999).then((socket) {
+
+    Socket.connect("192.168.0.30", 9999).then((socket) {
       print(socket);
       _socket = socket;
     });

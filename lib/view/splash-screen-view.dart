@@ -1,5 +1,6 @@
 import 'package:cliente/server/server-socket.dart';
 import 'package:cliente/view/home-view.dart';
+import 'package:cliente/view/utils/dialog-utils.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -12,20 +13,19 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 
   @override
   void initState() {
+    super.initState();
     serverSocket = new ServerSocket();
 
     _iniciaServidor();
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Center(
-        child: CircularProgressIndicator(
-          backgroundColor: Colors.blue,
-        ),
-      ),
+      body: new Center(child:  CircularProgressIndicator(
+        valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+        strokeWidth: 4.0,
+      ),),
     );
   }
 
