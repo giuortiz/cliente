@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DialogUtils {
-  void showProgressDialog(context, text) {
+  BuildContext _context;
+
+  DialogUtils(BuildContext context) {
+    _context = context;
+  }
+
+  void showProgressDialog( text) async{
     showDialog(
-        context: context,
+        context: _context,
         builder: (context) => new Container(
             color: Colors.white,
             child: new Row(
@@ -19,7 +25,7 @@ class DialogUtils {
             )));
   }
 
-  void dialogDismiss(context) {
-    Navigator.of(context).pop();
+  void dialogDismiss() {
+    Navigator.of(_context).pop();
   }
 }
